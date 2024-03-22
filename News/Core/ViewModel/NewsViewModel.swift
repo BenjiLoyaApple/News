@@ -6,13 +6,9 @@
 //
 
 import SwiftUI
+import Combine
 
-struct NewsViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+class NewsViewModel: ObservableObject {
+    @Published var news: [News] = []
 }
 
-#Preview {
-    NewsViewModel()
-}
