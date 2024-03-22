@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HelloScreen: View {
     var body: some View {
-        Text("Hello screen!")
+        VStack {
+            Text("Test")
+        }
     }
 }
 
