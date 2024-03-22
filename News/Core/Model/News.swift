@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct News: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    News()
+struct News: Identifiable, Codable {
+    let id = UUID().uuidString
+    let name: String
+    let caption: String
+    
+    //init
 }
