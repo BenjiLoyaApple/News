@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11FF243E2BADD03F00008283 /* HelloScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FF243D2BADD03F00008283 /* HelloScreen.swift */; };
+		11FF24412BADD1FE00008283 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FF24402BADD1FE00008283 /* EditView.swift */; };
 		E4E9E1E92BADCF060052497B /* NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E1E82BADCF060052497B /* NewsApp.swift */; };
 		E4E9E1EB2BADCF060052497B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E1EA2BADCF060052497B /* ContentView.swift */; };
 		E4E9E1ED2BADCF070052497B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4E9E1EC2BADCF070052497B /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		11FF243D2BADD03F00008283 /* HelloScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloScreen.swift; sourceTree = "<group>"; };
+		11FF24402BADD1FE00008283 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		E4E9E1E52BADCF060052497B /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E9E1E82BADCF060052497B /* NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApp.swift; sourceTree = "<group>"; };
 		E4E9E1EA2BADCF060052497B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				E4E9E1E82BADCF060052497B /* NewsApp.swift */,
 				E4E9E1EA2BADCF060052497B /* ContentView.swift */,
 				11FF243D2BADD03F00008283 /* HelloScreen.swift */,
+				11FF24402BADD1FE00008283 /* EditView.swift */,
 				E4E9E1F62BADCF2E0052497B /* Home.swift */,
 				E4E9E1EC2BADCF070052497B /* Assets.xcassets */,
 				E4E9E1EE2BADCF070052497B /* Preview Content */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FF243E2BADD03F00008283 /* HelloScreen.swift in Sources */,
+				11FF24412BADD1FE00008283 /* EditView.swift in Sources */,
 				E4E9E1EB2BADCF060052497B /* ContentView.swift in Sources */,
 				E4E9E1F72BADCF2E0052497B /* Home.swift in Sources */,
 				E4E9E1E92BADCF060052497B /* NewsApp.swift in Sources */,
