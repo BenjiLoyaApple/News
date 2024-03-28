@@ -31,36 +31,19 @@ struct GetDataView: View {
             .padding(.top)
         }
         .padding()
-        .onAppear {
-            async {
-                if #available(iOS 15.0, *) {
-                    await getData()
-                } else {
-                    await getDataCompat()
-                }
-            }
+        .task {
+            await getData()
         }
     }
     
-    @available(iOS 15.0, *)
-        private func getData() async {
-            do {
-                users = try await DataBaseHelper().getUsers()
-                products = try await DataBaseHelper().getProducts()
-            } catch {
-                print("Error: \(error)")
-            }
+    private func getData() async {
+        do {
+            users = try await DataBaseHelper().getUsers()
+            products = try await DataBaseHelper().getProducts()
+        } catch {
+            print("Error: \(error)")
         }
-        
-        // For iOS 14 compatibility
-        private func getDataCompat() async {
-            do {
-                users = try await DataBaseHelper().getUsers()
-                products = try await DataBaseHelper().getProducts()
-            } catch {
-                print("Error: \(error)")
-            }
-        }
+    }
     
 }
 
@@ -68,14 +51,3 @@ struct GetDataView: View {
     GetDataView()
 }
 
-
-/*
- private func getData() async {
-        do {
-            users = try await DataBaseHelper().getUsers()
-            products = try await DataBaseHelper().getProducts()
-        } catch {
- print("Error: \(error)")
-        }
-    }
- */
