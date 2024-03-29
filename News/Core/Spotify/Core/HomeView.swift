@@ -6,24 +6,40 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct HomeView: View {
     
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
+    @State private var products: [Product] = []
     
     var body: some View {
         ZStack {
             Color.spotifyBlack.ignoresSafeArea()
             
             ScrollView(.vertical) {
-                LazyVStack(spacing: 5, pinnedViews: [.sectionHeaders], content: {
+                LazyVStack(spacing: 5,
+                           pinnedViews: [.sectionHeaders],
+                           content: {
                     Section {
-                        ForEach(0..<20) { _ in
-                            Rectangle()
-                                .fill(Color.spotifyLightGray)
-                                .frame(width: 200, height: 200)
+                        VStack(spacing: 16) {
+                            recentsSection
+                            
+                            if let product = products.first {
+                                newReelaseSection(product: product)
+                            }
                         }
+                        .padding(.horizontal, 16)
+                        
+                        
+                        
+//                        ForEach(0..<20) { _ in
+//                            Rectangle()
+//                                .fill(Color.spotifyLightGray)
+//                                .frame(width: 200, height: 200)
+//                        }
+                        
                     } header: {
                         header
                     }
@@ -43,7 +59,7 @@ struct HomeView: View {
     private func getData() async {
         do {
             currentUser = try await DataBaseHelper().getUsers().first
-       //     products = try await DataBaseHelper().getProducts()
+            products = try await Array(DataBaseHelper().getProducts().prefix(8))
         } catch {
             print("Error: \(error)")
         }
@@ -82,6 +98,32 @@ struct HomeView: View {
         .padding(.leading, 8)
         .frame(maxWidth: .infinity)
         .background(Color.spotifyBlack)
+    }
+    
+    private var recentsSection: some View {
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10 ,items: products) { product in
+            if let product {
+                SpotifyRecentCell(
+                    imageName:  product.firstImage,
+                    title: product.title
+                )
+            }
+        }
+    }
+    
+    private func newReelaseSection(product: Product) -> some View {
+        SpotifyNewReleaseCell(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description,
+            onAddPlaylistPressed: {
+            },
+            onPlayPressed: {
+                
+            }
+        )
     }
     
 }
