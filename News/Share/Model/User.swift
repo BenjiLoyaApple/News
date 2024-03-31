@@ -15,7 +15,7 @@ struct UserArray: Codable {
 // MARK: - User
 struct User: Codable, Identifiable {
     let id: Int
-    let firstName, lastName, maidenName: String
+    let firstName, lastName: String
     let age: Int
     let gender, email, phone, username: String
     let password, birthDate: String
@@ -32,6 +32,35 @@ struct User: Codable, Identifiable {
   //  let company: Company
     let ein, ssn, userAgent: String
   //  let crypto: Crypto
+    
+    
+    static var mock: User {
+        User(
+            id: 123,
+            firstName: "Benji",
+            lastName: "Loya",
+            age: 18,
+            gender: "male",
+            email: "apple.com",
+            phone: "",
+            username: "",
+            password: "",
+            birthDate: "",
+            image: "",
+            bloodGroup: "",
+            height: 188,
+            weight: 7,
+            eyeColor: "",
+            domain: "",
+            ip: "",
+            macAddress: "",
+            university: "",
+            ein: "",
+            ssn: "",
+            userAgent: ""
+        )
+    }
+    
 }
 
 // MARK: - Address
