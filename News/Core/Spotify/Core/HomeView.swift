@@ -7,8 +7,28 @@
 
 import SwiftUI
 import SwiftfulUI
+import SwiftfulRouting
+
+@Observable
+final class HomeViewModel {
+    let router: AnyRouter
+    
+    var currentUser: User? = nil
+    var selectedCategory: Category? = nil
+    var products: [Product] = []
+    var productRows: [ProductRow] = []
+    
+    init(router: AnyRouter) {
+        self.router = router
+    }
+}
+
 
 struct HomeView: View {
+    
+    @State var vm: HomeViewModel
+    
+    @Environment(\.router) var router
     
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
@@ -51,6 +71,7 @@ struct HomeView: View {
     }
     
     private func getData() async {
+        guard products.isEmpty else { return }
         do {
             currentUser = try await DataBaseHelper().getUsers().first
             products = try await Array(DataBaseHelper().getProducts().prefix(8))
@@ -75,7 +96,7 @@ struct HomeView: View {
                         .background(.spotifyWhite)
                         .clipShape(Circle())
                         .onTapGesture {
-                            
+                            router.dismissScreen()
                         }
                 }
             }
@@ -110,9 +131,16 @@ struct HomeView: View {
                     title: product.title
                 )
                 .asButton(.press) {
-                    
+                    goToPlaylistView(product: product)
                 }
             }
+        }
+    }
+    
+    private func goToPlaylistView(product: Product) {
+        guard let currentUser else { return }
+        router.showScreen(.push) { _ in
+            PlayListView(product: product, user: currentUser)
         }
     }
     
@@ -126,7 +154,7 @@ struct HomeView: View {
             onAddPlaylistPressed: {
             },
             onPlayPressed: {
-                
+                goToPlaylistView(product: product)
             }
         )
     }
@@ -144,13 +172,13 @@ struct HomeView: View {
                 ScrollView(.horizontal) {
                     HStack(alignment: .top, spacing: 16)  {
                         ForEach(row.products) { product in
-                            ImageTitleRowcell(
+                            ImageTitleRowCell(
                                 imageSize: 120,
                                 imageName: product.firstImage,
                                 title: product.title
                             )
                             .asButton(.press) {
-                                
+                                goToPlaylistView(product: product)
                             }
                         }
                     }
@@ -164,5 +192,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    RouterView { router in
+        HomeView(vm: HomeViewModel(router: router))
+    }
 }

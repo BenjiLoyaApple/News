@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageTitleRowcell: View {
+struct ImageTitleRowCell: View {
     
     var imageSize: CGFloat = 100
     var imageName: String = Constants.randomImage
@@ -31,7 +31,7 @@ struct ImageTitleRowcell: View {
     ZStack {
         Color.black.ignoresSafeArea()
         
-        ImageTitleRowcell()
+        ImageTitleRowCell()
             .padding()
     }
 }
