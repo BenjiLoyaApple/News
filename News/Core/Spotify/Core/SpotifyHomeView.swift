@@ -24,7 +24,7 @@ final class HomeViewModel {
 }
 
 
-struct HomeView: View {
+struct SpotifyHomeView: View {
     
     @State var vm: HomeViewModel
     
@@ -140,7 +140,7 @@ struct HomeView: View {
     private func goToPlaylistView(product: Product) {
         guard let currentUser else { return }
         router.showScreen(.push) { _ in
-            PlayListView(product: product, user: currentUser)
+            SpotifyPlayListView(product: product, user: currentUser)
         }
     }
     
@@ -193,6 +193,6 @@ struct HomeView: View {
 
 #Preview {
     RouterView { router in
-        HomeView(vm: HomeViewModel(router: router))
+        SpotifyHomeView(vm: HomeViewModel(router: router))
     }
 }

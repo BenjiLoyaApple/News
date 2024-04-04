@@ -33,6 +33,35 @@ struct User: Codable, Identifiable {
     let ein, ssn, userAgent: String
   //  let crypto: Crypto
     
+    var aboutMe: String {
+        "This is sentence about me that will look good on my profile"
+    }
+    
+    var basics: [UserInterst] {
+        [
+        UserInterst(iconName: "ruler", emoji: nil, text: "\(height)"),
+        UserInterst(iconName: "graduationcap", emoji: nil, text: "\(university)"),
+        UserInterst(iconName: "wineglass", emoji: nil, text: "Socially"),
+        UserInterst(iconName: "moon.stars.fill", emoji: nil, text: "Virgo")
+        ]
+    }
+    
+    var interests: [UserInterst] {
+        [
+        UserInterst(iconName: nil, emoji: "🥰", text: "Love"),
+        UserInterst(iconName: nil, emoji: "✈️", text: "Travel"),
+        UserInterst(iconName: nil, emoji: "🍕", text: "Pizza"),
+        UserInterst(iconName: nil, emoji: "🏎️", text: "Cars")
+        ]
+    }
+    
+    
+    var images: [String] {
+        ["https://fikiwiki.com/uploads/posts/2022-02/1644919376_39-fikiwiki-com-p-ssha-krasivie-kartinki-51.jpg",
+         "https://i.pinimg.com/originals/fb/cb/01/fbcb01f35217ecbe2177333a3922a557.jpg",
+         "https://i.pinimg.com/originals/69/4b/7f/694b7f8621ac0abb27afabca34d6e498.jpg"]
+    }
+    
     
     static var mock: User {
         User(
@@ -46,15 +75,15 @@ struct User: Codable, Identifiable {
             username: "",
             password: "",
             birthDate: "",
-            image: "",
+            image: "https://www.albayan.ae/polopoly_fs/1.4606090.1674938727!/image/image.jpg",
             bloodGroup: "",
             height: 188,
             weight: 7,
             eyeColor: "",
             domain: "",
-            ip: "",
-            macAddress: "",
-            university: "",
+            ip: "Apple",
+            macAddress: "Apple",
+            university: "Garvard",
             ein: "",
             ssn: "",
             userAgent: ""

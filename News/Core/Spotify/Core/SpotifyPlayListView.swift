@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftfulUI
 import SwiftfulRouting
 
-struct PlayListView: View {
+struct SpotifyPlayListView: View {
     @Environment(\.router) var router
     
     var product: Product = .mock
@@ -90,7 +90,7 @@ struct PlayListView: View {
     
     private func goToPlaylistView(product: Product) {
         router.showScreen(.push) { _ in
-            PlayListView(product: product, user: user)
+            SpotifyPlayListView(product: product, user: user)
         }
     }
     
@@ -124,6 +124,6 @@ struct PlayListView: View {
 
 #Preview {
     RouterView { _ in
-    PlayListView()
+    SpotifyPlayListView()
 }
 }
