@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 import SwiftfulRouting
 
 
@@ -20,6 +21,13 @@ struct ContentView: View {
                     SpotifyHomeView(vm: HomeViewModel(router: router))
                 }
             }
+            
+            Button("Open Bumble") {
+                router.showScreen(.fullScreenCover) { router in
+                    BumbleHomeView()
+                }
+            }
+            
             
         }
        // .listStyle(.plain)
