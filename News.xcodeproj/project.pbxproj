@@ -40,6 +40,7 @@
 		E4D8742F2BC26B010043B1BF /* BumbleChatPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D8742E2BC26B010043B1BF /* BumbleChatPreviewCell.swift */; };
 		E4D874312BC2728B0043B1BF /* BumbleChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D874302BC2728B0043B1BF /* BumbleChatsView.swift */; };
 		E4E1D5722BE284CE00E0FE17 /* NetflixHeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1D5712BE284CE00E0FE17 /* NetflixHeroCell.swift */; };
+		E4E1D5742BE294D900E0FE17 /* NetflixMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1D5732BE294D900E0FE17 /* NetflixMovieCell.swift */; };
 		E4E9E1E92BADCF060052497B /* NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E1E82BADCF060052497B /* NewsApp.swift */; };
 		E4E9E1EB2BADCF060052497B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9E1EA2BADCF060052497B /* ContentView.swift */; };
 		E4E9E1ED2BADCF070052497B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4E9E1EC2BADCF070052497B /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		E4D8742E2BC26B010043B1BF /* BumbleChatPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatPreviewCell.swift; sourceTree = "<group>"; };
 		E4D874302BC2728B0043B1BF /* BumbleChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatsView.swift; sourceTree = "<group>"; };
 		E4E1D5712BE284CE00E0FE17 /* NetflixHeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixHeroCell.swift; sourceTree = "<group>"; };
+		E4E1D5732BE294D900E0FE17 /* NetflixMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixMovieCell.swift; sourceTree = "<group>"; };
 		E4E9E1E52BADCF060052497B /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E9E1E82BADCF060052497B /* NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApp.swift; sourceTree = "<group>"; };
 		E4E9E1EA2BADCF060052497B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				E466197E2BCAF0BB0036FFD8 /* NetflixFilterCell.swift */,
 				E46619802BCAF3050036FFD8 /* NetflixFilterBarView.swift */,
 				E4E1D5712BE284CE00E0FE17 /* NetflixHeroCell.swift */,
+				E4E1D5732BE294D900E0FE17 /* NetflixMovieCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				E4D873F92BBC6C3A0043B1BF /* BumbleHomeView.swift in Sources */,
 				E4D874012BBDC02B0043B1BF /* InterestPillView.swift in Sources */,
 				E4D873A02BB5B1AD0043B1BF /* Product.swift in Sources */,
+				E4E1D5742BE294D900E0FE17 /* NetflixMovieCell.swift in Sources */,
 				E4E9E1EB2BADCF060052497B /* ContentView.swift in Sources */,
 				E4E1D5722BE284CE00E0FE17 /* NetflixHeroCell.swift in Sources */,
 				E4D8742D2BC1CA800043B1BF /* BumbleProfileImageCell.swift in Sources */,
