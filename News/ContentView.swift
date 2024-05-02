@@ -16,15 +16,21 @@ struct ContentView: View {
     
     var body: some View {
         List {
-            Button("Open Spotify") {
+            Button("Spotify") {
                 router.showScreen(.fullScreenCover) { router in
                     SpotifyHomeView(vm: HomeViewModel(router: router))
                 }
             }
             
-            Button("Open Bumble") {
+            Button("Bumble") {
                 router.showScreen(.fullScreenCover) { router in
                     BumbleHomeView()
+                }
+            }
+            
+            Button("Netflix") {
+                router.showScreen(.fullScreenCover) { router in
+                    NetflixHomeView()
                 }
             }
             
